@@ -1,0 +1,11 @@
+{
+  "name": "ts-handbook",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --watch ./src/app.ts"
+  },
+  "author": "",
+  "license": "ISC"
+}
