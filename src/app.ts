@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 // function greeter(fn: (a: string) => void) {
 //   fn('Hello world!');
@@ -136,3 +136,102 @@
 // }
 // f();
 // f(10.9999);
+
+// function makeData(timestamp: number): Date;
+// function makeData(m: number, d: number, y: number): Date;
+// function makeData(mOrTimeStamp: number, d?: number, y?: number) {
+//   if (d !== undefined && y !== undefined) {
+//     return new Date(y, mOrTimeStamp, d);
+//   } else {
+//     return new Date(mOrTimeStamp);
+//   }
+// }
+// const d1 = makeData(12345678);
+// const d2 = makeData(5, 5, 5);
+// // const d3 = makeData(1, 3); // No overload expects 2 arguments, but overloads do exist that expect either 1 or 3 arguments.
+// console.log({
+//   d1,
+//   d2,
+//   //   d3
+// });
+
+// function fn(x: string): void;
+// function fn(): void;
+// function fn() {}
+// fn();
+
+// function fn(x: string): void;
+// function fn(x: boolean): void;
+// function fn(x: boolean | string) {}
+
+// // function len(s: string): number;
+// // function len(s: any[]): number;
+// // function len(arr: any[] | string): number;
+// // function len(x: any) {
+// //   return x.length;
+// // }
+
+// function len(x: any[] | string) {
+//   return x.length;
+// }
+
+// len("");
+// len([0]);
+// len(Math.random() > 0.5 ? "hello" : [9]);
+
+// function doSomething(f: (a: number, b: number, c: number) => void) {
+//   return f(1, 2, 3);
+// }
+
+// const args = [8, 5];
+// const angle = Math.atan2(...args);
+
+// // Inferred as 2-length tuple
+// const args = [8, 5] as const;
+// // OK
+// const angle = Math.atan2(...args);
+
+// function sum({ a, b, c }: { a: number; b: number; c: number }) {
+//   console.log({ a, b, c });
+// }
+
+// interface ABC {
+//   a: number;
+//   b: number;
+//   c: number;
+// }
+// type ABC = { a: number; b: number; c: number };
+
+// function sum({ a, b, c }: ABC) {
+//   console.log({ a, b, c });
+// }
+
+// type voidFunc = () => void;
+// const f1: voidFunc = () => {
+//   return true;
+// };
+// const f2: voidFunc = () => true;
+// const f3: voidFunc = function () {
+//   return true;
+// };
+
+// const v1 = f1();
+
+// const v2 = f2();
+
+// const v3 = f3();
+
+// function f2(): void {
+//   // @ts-expect-error
+//   return true;
+// }
+
+// const f3 = function (): void {
+//   // @ts-expect-error
+//   return true;
+// };
+
+// // Allowed: Contextual void type ignores the returned value.
+// [1, 2, 3].forEach(() => {
+//   return 123; // No error, but value is unused.
+// });
